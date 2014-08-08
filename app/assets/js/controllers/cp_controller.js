@@ -1,75 +1,38 @@
 'use strict';
 
-app.controller('CpController', ['$scope', '$interval', '$timeout', function($scope, $interval, $timeout){
+app.controller('CpController', ['$scope', '$interval', 'ClipboardService', 'Database', 
+  function($scope, $interval, ClipboardService, Database){
 
-  var gui = require('nw.gui'),
-      clipboard = gui.Clipboard.get(),
-      db = localStorage;
-    
-  if(typeof db.getItem('clips') == "undefined")
-  {
-    $scope.clearHistory();
-  }
+  $scope.clips = JSON.parse(Database.get('clips'));
 
-  $scope.clips = JSON.parse(db.getItem('clips'));
+  ClipboardService.listener(function(new_item){
+    $scope.clips.unshift(new_item);
+  });
 
-  var updateDB = function(){
-    db.setItem('clips', JSON.stringify($scope.clips));
-  };
+  $scope.$watchCollection('clips', function(){
+    Database.set('clips', $scope.clips);
+  });
 
-  var listenToClipboard = function(){
-    var latest = $scope.clips[0],
-        current = clipboard.get('text');
-
-    if(current.length == 0)
-    {
-      return;
-    }
-
-    if(typeof latest == "undefined" || current != latest.text){
-      $scope.clips.unshift({
-        text: current,
-        id: new Date()
-      });
-      updateDB();
-    }
-  };
-
-  var copyToClipboard = function(clip){
-    clipboard.set(clip, 'text');
-  };
-
-  var clearClipboard = function(){
-    clipboard.set('', 'text');
-  }
-
-  $interval(function(){
-    listenToClipboard();
-  }, 2000);
-
-  $scope.removeFromList = function(clip){
+  $scope.removeItem = function(clip){
     $scope.clips.forEach(function(element, index, array){
       if(element == clip){
-        array.splice(index, 1);
+        $scope.clips.splice(index, 1);
       }
     });
 
-    updateDB();
-
-    if(clip.text == clipboard.get('text'))
+    if(clip.text == ClipboardService.current())
     {
-      clearClipboard();
+      ClipboardService.erase();
     }
   }
 
   $scope.clearHistory = function(){
     $scope.clips = [];
-    db.setItem('clips', JSON.stringify([]));
-    clearClipboard();
+    ClipboardService.erase();
   }
 
-  $scope.copyFromList = function(clip){
-    copyToClipboard(clip.text);
+  $scope.copyClip = function(clip){
+    ClipboardService.add(clip.text);
   }
 
 }]);

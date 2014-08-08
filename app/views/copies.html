@@ -6,10 +6,10 @@
   <ul>
     <li data-ng-repeat="clip in filteredClips = (clips | limitTo:25 | filter:search) track by clip.id">
       <p class="text">
-        <span data-ng-click="copyFromList(clip)">{{ clip.text }} </span>
+        <span data-ng-click="copyClip(clip)">{{ clip.text }} </span>
         <br />
         <small>{{ clip.id | date:'medium' }}</small>
-        <small class="delete" data-ng-click="removeFromList(clip)">(x)</small>
+        <small class="delete" data-ng-click="removeItem(clip)">(x)</small>
       </p>
     </li>
     <li data-ng-hide="filteredClips.length"><p class="text"><strong>Sorry, no clips found</strong></p></li>
