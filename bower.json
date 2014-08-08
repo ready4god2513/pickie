@@ -1,0 +1,23 @@
+{
+  "name": "pickie",
+  "version": "0.0.1",
+  "description": "Scour the web for images",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.20",
+    "angular-animate": "latest"
+  },
+  "devDependencies": {
+    "angular-ui-router": "~0.2.10"
+  }
+}

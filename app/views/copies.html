@@ -1,0 +1,17 @@
+<section data-ng-controller="CpController">
+  <input type="text" data-ng-model="search.text" id="clip-search" placeholder="Search Clips" />
+  <p class="options">
+    <small data-ng-click="clearHistory()">Clear History ({{ clips.length }} clips)</small>
+  </p>
+  <ul>
+    <li data-ng-repeat="clip in filteredClips = (clips | limitTo:25 | filter:search) track by clip.id">
+      <p class="text">
+        <span data-ng-click="copyFromList(clip)">{{ clip.text }} </span>
+        <br />
+        <small>{{ clip.id | date:'medium' }}</small>
+        <small class="delete" data-ng-click="removeFromList(clip)">(x)</small>
+      </p>
+    </li>
+    <li data-ng-hide="filteredClips.length"><p class="text"><strong>Sorry, no clips found</strong></p></li>
+  </ul>
+</section>

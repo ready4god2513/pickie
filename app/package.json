@@ -1,0 +1,28 @@
+{
+  "devDependencies": {
+    "gulp": "^3.8.7",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-sass": "^0.7.2",
+    "gulp-watch": "^0.6.9",
+    "node-webkit-builder": "^0.1.1"
+  },
+  "main": "index.html",
+  "name": "pickie",
+  "no-edit-menu": true,
+  "version": "0.0.9",
+  "window": {
+    "frame": false,
+    "height": 250,
+    "icon": "public/images/pickie-logo.png",
+    "min_height": 250,
+    "min_width": 600,
+    "position": "mouse",
+    "resizable": true,
+    "show": true,
+    "show_in_taskbar": true,
+    "single-instance": true,
+    "title": "Pickie: Clipboard History",
+    "toolbar": false,
+    "width": 600
+  }
+}
