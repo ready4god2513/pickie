@@ -5,7 +5,7 @@ filter, and remove you clipboard history quickly.
 
 ![List Clips](http://i.imgur.com/3aJOioU.png)
 
-Written on top of node-webkit and leveraging the two-way data binding of Angular JS.
+Written on top of node-webkit and leveraging the two-way data binding of Angular JS.  **Note: This app has *only* been tested on OS X so far, but I have plans to use it on Windows and Linux as well.  If you come across an issue, please let me know.**
 
 # Getting Started
 I will be releasing a binary distribution of the app in the near future, however, if you would
@@ -13,8 +13,9 @@ like to get started, you will need to do a few things-
 
 1. Clone the repository
 2. run `npm install`
-3. run `bower install`
 4. run the app [according to the docs here](https://github.com/rogerwang/node-webkit/wiki/How-to-run-apps "Running Node-Webkit Apps")
+
+If you make any changes to the source code (javascript/sass), you will need to run gulp to concatenate and minify.  Just run `gulp` from the root directory.
 
 # How to Contribute
 
