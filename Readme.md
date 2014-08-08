@@ -3,6 +3,8 @@
 Want to keep, search through, and re-copy your clipboard history?  Then **Pickie** is the app for you.  Browse,
 filter, and remove you clipboard history quickly. 
 
+![List Clips](http://i.imgur.com/3aJOioU.png)
+
 Written on top of node-webkit and leveraging the two-way data binding of Angular JS.
 
 # Getting Started

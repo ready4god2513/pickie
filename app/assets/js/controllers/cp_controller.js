@@ -20,6 +20,9 @@ app.controller('CpController', ['$scope', '$interval', 'ClipboardService', 'Data
       }
     });
 
+    // If we are erasing the most recent item from the clipboard history
+    // we need to remove it from the actual system clipboard as well
+    // in order to ensure that it is not added back to the top of the list
     if(clip.text == ClipboardService.current())
     {
       ClipboardService.erase();
