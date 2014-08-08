@@ -5,6 +5,8 @@ filter, and remove you clipboard history quickly.
 
 ![List Clips](http://i.imgur.com/3aJOioU.png)
 
+How it works- Start the app.  It will listen to your clipboard.  Each change will get logged to the app.  You can filter the history at any time with the search field.  If you want to re-copy an entry, just click on it.  To remove an entry click the "x" below the entry text.  History is persisted across app-launches.
+
 Written on top of node-webkit and leveraging the two-way data binding of Angular JS.  **Note: This app has *only* been tested on OS X so far, but I have plans to use it on Windows and Linux as well.  If you come across an issue, please let me know.**
 
 # Getting Started
