@@ -1,11 +1,4 @@
 {
-  "devDependencies": {
-    "gulp": "^3.8.7",
-    "gulp-ruby-sass": "^0.7.1",
-    "gulp-sass": "^0.7.2",
-    "gulp-watch": "^0.6.9",
-    "node-webkit-builder": "^0.1.1"
-  },
   "main": "index.html",
   "name": "pickie",
   "no-edit-menu": true,

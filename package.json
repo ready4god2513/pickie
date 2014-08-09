@@ -1,0 +1,20 @@
+{
+  "name": "pickie-gulp",
+  "version": "0.0.1",
+  "description": "Clipboard history simplified",
+  "scripts": {
+  },
+  "author": "",
+  "license": "UNLICENSE",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "del": "^0.1.1",
+    "gulp": "^3.8.7",
+    "gulp-concat": "^2.3.4",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-sass": "^0.7.2",
+    "gulp-uglify": "^0.3.1",
+    "gulp-watch": "^0.6.9"
+  }
+}
