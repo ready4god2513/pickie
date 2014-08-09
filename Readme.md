@@ -13,7 +13,7 @@ Written on top of node-webkit and leveraging the two-way data binding of Angular
 You can either download the binary distribution [here](https://www.dropbox.com/s/q7ng6gd1cm6cdc2/Pickie.zip) or build from source-
 
 1. Clone the repository
-2. run `npm install`
+2. run `npm install` from the app directory
 4. run the app [according to the docs here](https://github.com/rogerwang/node-webkit/wiki/How-to-run-apps "Running Node-Webkit Apps")
 
 If you make any changes to the source code (javascript/sass), you will need to run gulp to concatenate and minify.  Just run `gulp` from the root directory.
