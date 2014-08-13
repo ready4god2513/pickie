@@ -4,7 +4,7 @@
     <small data-ng-click="clearHistory()">Clear History ({{ clips.length }} clips)</small>
   </p>
   <ul>
-    <li data-ng-repeat="clip in filteredClips = (clips | limitTo:25 | filter:search) track by clip.id">
+    <li data-ng-repeat="clip in filteredClips = (clips | filter:search | limitTo:25) track by clip.id">
       <p class="text">
         <span data-ng-click="copyClip(clip)">{{ clip.text }} </span>
         <br />
